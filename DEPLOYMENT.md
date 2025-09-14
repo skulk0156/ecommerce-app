@@ -132,7 +132,12 @@ When connecting via GitHub, Vercel should auto-detect:
 1. **404 on page refresh:**
    - ✅ Already fixed with `vercel.json` and `_redirects`
 
-2. **Build fails:**
+2. **Rollup @rollup/rollup-linux-x64-gnu missing error:**
+   - ✅ Already fixed with optional dependencies in package.json
+   - This is a common Vercel deployment issue
+   - The optional dependency ensures Rollup works on Linux servers
+
+3. **Build fails:**
    ```bash
    # Clear cache and reinstall
    rm -rf node_modules package-lock.json
@@ -140,11 +145,11 @@ When connecting via GitHub, Vercel should auto-detect:
    npm run build
    ```
 
-3. **Images not loading:**
+4. **Images not loading:**
    - Check if all images are using HTTPS URLs
    - Verify image URLs are accessible
 
-4. **Routing issues:**
+5. **Routing issues:**
    - ✅ Already configured with proper SPA routing
 
 ## 🌐 Post-Deployment
